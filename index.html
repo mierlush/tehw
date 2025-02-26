@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
-    <title>Torturi Delicioase</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torturi Delicioase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<body style="background: url('images/background.jpg') no-repeat center center fixed; background-size: cover; color: #2E1B12; text-align: center;">
+<body>
+    <!-- Bannerul cu titlu și subtitlu mici -->
+    <div class="banner">
+        <h1>🎂 Bine ai venit pe Torturi Delicioase! 🎂</h1>
+        <p>Descoperă cele mai delicioase torturi pentru orice ocazie! Alege preferatul tău!</p>
+    </div>
 
-    <h1 style="background-color: rgba(88, 44, 30, 0.9); color: #F5DEB3; padding: 15px; border-radius: 10px;">
-        🎂 Bine ai venit pe site-ul Torturi Delicioase! 🎂
-    </h1>
-
-    <nav style="background-color: rgba(60, 30, 20, 0.9); padding: 15px; border-radius: 10px;">
-        <a href="ciocolata.html" target="_blank" style="color: #FFD700; font-weight: bold;">Torturi de Ciocolată</a> |
-        <a href="fructe.html" target="_blank" style="color: #ADFF2F; font-weight: bold;">Torturi de Fructe</a> |
-        <a href="nunta.html" target="_blank" style="color: #1E90FF; font-weight: bold;">Torturi de Nuntă</a> |
-        <a href="caramel.html" target="_blank" style="color: #DAA520; font-weight: bold;">Torturi cu Caramel</a>
+    <nav>
+        <ul>
+            <li><a href="ciocolata.html">Torturi de Ciocolată</a></li>
+            <li><a href="fructe.html">Torturi de Fructe</a></li>
+            <li><a href="nunta.html">Torturi de Nuntă</a></li>
+            <li><a href="caramel.html">Torturi cu Caramel</a></li>
+        </ul>
     </nav>
 
-    <hr style="border: 3px solid #5A2E1A; width: 80%;">
+    <hr class="separator">
 
-    <p style="background-color: rgba(70, 35, 20, 0.9); color: #E0C097; padding: 20px; border-radius: 10px; font-size: 18px;">
-        Descoperă cele mai delicioase torturi pentru orice ocazie! Alege preferatul tău! 
-    </p>
+    <main>
 
-    <hr style="border: 3px solid #5A2E1A; width: 80%;">
+        <div class="gallery-container">
+            <section class="gallery">
+                <img src="images/imagine1.jpg" alt="Tort 1">
+                <img src="images/imagine2.jpg" alt="Tort 2">
+                <img src="images/imagine3.jpg" alt="Tort 3">
+                <img src="images/imagine4.jpg" alt="Tort 4">
+                <img src="images/imagine5.jpg" alt="Tort 5">
+            </section>
+            <section class="gallery">
+                <img src="images/imagine6.jpg" alt="Tort 6">
+                <img src="images/imagine7.jpg" alt="Tort 7">
+                <img src="images/imagine8.jpg" alt="Tort 8">
+                <img src="images/imagine9.jpg" alt="Tort 9">
+                <img src="images/imagine10.jpg" alt="Tort 10">
+            </section>
+            <section class="gallery">
+                <img src="images/imagine11.jpg" alt="Tort 11">
+                <img src="images/imagine12.jpg" alt="Tort 12">
+                <img src="images/imagine13.jpg" alt="Tort 13">
+                <img src="images/imagine14.jpg" alt="Tort 14">
+                <img src="images/imagine15.jpg" alt="Tort 15">
+            </section>
+        </div>
+    </main>
 
+    <hr class="separator">
+
+    <footer>
+        <p>&copy; 2025 Torturi Delicioase. Toate drepturile rezervate.</p>
+    </footer>
 </body>
 </html>

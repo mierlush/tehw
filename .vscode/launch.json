@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open hello.html",
-            "file": "c:\\Users\\M\\OneDrive - Technical University of Moldova\\Desktop\\tehw\\hello.html"
+            "name": "Open index.html",
+            "file": "c:\\Users\\M\\OneDrive - Technical University of Moldova\\Desktop\\tehw\\index.html"
         }
     ]
 }
