@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* Bannerul cu gradient roz */
+.banner {
+    background: linear-gradient(to bottom right, #ea6f90, #FAD0C5);
+    color: #FFFFFF;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.banner h1 {
+    font-size: 2.5rem; /* Dimensiune mai mare pentru titlu */
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 1.25rem; /* Textul subtitlu mai mic */
+    margin-top: 10px;
+}
+
+header, nav, footer {
+    background-color: rgba(217, 131, 154, 0.9);
+    color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 90%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+.separator {
+    border: 3px solid #D9839A;
+    width: 70%;
+    margin: 15px auto;
+}
+
+.description {
+    background-color: rgba(206, 97, 126, 0.9);
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 80%;
+    margin: 0 auto 20px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.gallery {
+    flex: 1;
+    min-width: 30%;
+    max-width: 33%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: slide 25s infinite;
+    border-radius: 15px;
+}
+
+.gallery img:nth-child(1) { animation-delay: 0s; }
+.gallery img:nth-child(2) { animation-delay: 5s; }
+.gallery img:nth-child(3) { animation-delay: 10s; }
+.gallery img:nth-child(4) { animation-delay: 15s; }
+.gallery img:nth-child(5) { animation-delay: 20s; }
+
+@keyframes slide {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    20% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+footer {
+    font-size: 14px;
+    padding: 10px 0;
+    background-color: rgba(217, 131, 154, 0.9);
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-wrap: wrap;
+    }
+
+    .gallery {
+        min-width: 90%;
+        height: 350px;
+    }
+}
