@@ -44,18 +44,21 @@ header h1 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 15px; /* Rotunjire mai evidentă */
 }
 
 .imagine img {
-    width: 100%;
-    height: 200%;
-    object-fit: contain;
+    width: 80%; /* Ajustează imaginea pentru a se potrivi complet în container */
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     opacity: 0;
     animation: slide 9s infinite;
     transition: opacity 0.5s ease;
+    border-radius: 15px; /* Rotunjire la nivelul imaginii */
 }
+
+
 
 .imagine img:nth-child(1) { animation-delay: 0s; }
 .imagine img:nth-child(2) { animation-delay: 3s; }

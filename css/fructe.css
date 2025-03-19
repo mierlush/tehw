@@ -7,7 +7,7 @@
 body {
     font-family: 'Playfair Display', serif;
     background-color: #E4F2E2; /* Verde pastel, exotic și plăcut */
-    background-image: url('images/background4.jpg');
+    background-image: url('images/background2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body {
 
 header {
     text-align: center;
-    background-color: #A8C686; /* Verde deschis, relaxant */
+    background-color: #A8C686; /* Fundal verde deschis și solid */
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -44,11 +44,12 @@ header h1 {
     flex-wrap: wrap;
 }
 
+/* Imagini care se încadrează perfect în caseta respectivă */
 .imagine img {
     width: 100%;
     max-width: 250px;
     height: 250px;
-    object-fit: contain; /* Se încadrează perfect fără a tăia imaginea */
+    object-fit: cover; /* Asigură că imaginea umple caseta complet fără margini goale */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -89,9 +90,12 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    margin-top: 30px;
-    border-radius: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
+
 
 @media (max-width: 768px) {
     .imagine {

@@ -1,0 +1,26 @@
+/* Stilizare buton "Vezi Decoratii" */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.decorations-button {
+    display: inline-block;
+    background-color: #D4AF37; /* Culoare aurie pentru buton */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.decorations-button:hover {
+    background-color: #B8860B; /* Schimbă culoarea la hover */
+    transform: translateY(-5px); /* Efect de ridicare la hover */
+}
+
+.decorations-button:active {
+    transform: translateY(2px); /* Efect de apăsare */
+}
