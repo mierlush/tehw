@@ -1,0 +1,38 @@
+/* Fundal roz deschis pentru întreaga pagină */
+body {
+    background-color: #FFB6C1; /* Roz deschis */
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 100% din înălțimea paginii */
+}
+
+main {
+    flex: 1; /* Permite secțiunii principale să ocupe spațiu liber */
+}
+
+.banner h1 {
+    text-align: center; /* Centrează titlul */
+    font-size: 2.5rem; /* Mărime mai mare pentru text */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.decoratii-gallery {
+    display: flex;
+    justify-content: center; /* Centrează galeria */
+    flex-wrap: wrap; /* Permite ca imaginile să se încadreze pe rânduri */
+    gap: 10px; /* Adaugă un spațiu între imagini */
+}
+
+.decoratie img {
+    max-width: 300px; /* Limitează dimensiunea imaginii */
+    height: auto;
+    border-radius: 8px; /* Colțuri rotunjite pentru imagini */
+}
+
+footer {
+    text-align: center; /* Centrează textul */
+    padding: 20px 0; /* Adaugă un pic de spațiu în jurul textului */
+}

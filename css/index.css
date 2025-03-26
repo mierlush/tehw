@@ -98,7 +98,9 @@ nav a:hover {
     border-radius: 15px; /* Colțuri rotunjite pentru casetă */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     position: relative;
+    
 }
+
 
 .gallery img {
     width: 100%;
@@ -110,6 +112,10 @@ nav a:hover {
     opacity: 0;
     animation: slide 25s infinite;
     border-radius: 15px; /* Colțuri rotunjite pentru imagine */
+}
+
+login-button {
+    padding-left: 100;
 }
 
 

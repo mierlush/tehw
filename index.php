@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -16,18 +20,22 @@
 
     <nav>
         <ul>
-        
-            <li><a href="ciocolata.html">Torturi de Ciocolată</a></li>
-            <li><a href="fructe.html">Torturi de Fructe</a></li>
-            <li><a href="nunta.html">Torturi de Nuntă</a></li>
-            <li><a href="caramel.html">Torturi cu Caramel</a></li>
+            <li><a href="ciocolata.php">Torturi de Ciocolată</a></li>
+            <li><a href="fructe.php">Torturi de Fructe</a></li>
+            <li><a href="nunta.php">Torturi de Nuntă</a></li>
+            <li><a href="caramel.php">Torturi cu Caramel</a></li>
+
+            <?php if (isset($_SESSION['username'])): ?>
+                <li class="login-button"><a href="logout.php">Iesire</a></li>
+            <?php else: ?>
+                <li class="login-button"><a href="login.php">Login</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 
     <hr class="separator">
 
     <main>
-
         <div class="gallery-container">
             <section class="gallery">
                 <img src="images/imagine1.jpg" alt="Tort 1">
@@ -52,12 +60,10 @@
             </section>
         </div>
 
-       <!-- Butonul pentru decoratii -->
-<div class="button-container">
-    <a href="decoratii.html" class="decorations-button">Vezi Decoratii</a>
-</div>
-
-
+        <!-- Butonul pentru decoratii -->
+        <div class="button-container">
+            <a href="decoratii.php" class="decorations-button">Vezi Decoratii</a>
+        </div>
     </main>
 
     <hr class="separator">
