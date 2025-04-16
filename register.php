@@ -1,65 +1,42 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 
-if (isset($_SESSION['username'])) {
-    header("Location: index.php");
-    exit();
-}
+$response = ['success' => false, 'message' => ''];
 
-$error = "";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = trim($_POST['username']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    if ($username === '' || $password === '') {
+        $response['message'] = 'Toate câmpurile sunt obligatorii.';
+        echo json_encode($response);
+        exit;
+    }
 
     $file = 'users.json';
     if (!file_exists($file)) {
         file_put_contents($file, json_encode([]));
     }
+
     $users = json_decode(file_get_contents($file), true);
 
     foreach ($users as $user) {
         if ($user['username'] === $username) {
-            $error = "Utilizatorul există deja!";
-            break;
+            $response['message'] = 'Utilizatorul există deja!';
+            echo json_encode($response);
+            exit;
         }
     }
 
-    if (!$error) {
-        $users[] = ['username' => $username, 'password' => $password];
-        file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
+    $users[] = [
+        'username' => $username,
+        'password' => password_hash($password, PASSWORD_BCRYPT)
+    ];
+    file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
 
-        // Autentificare automată după înregistrare
-        $_SESSION['username'] = $username;
-        header("Location: index.php");
-        exit();
-    }
+    $_SESSION['username'] = $username;
+    $response['success'] = true;
+    echo json_encode($response);
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Înregistrare</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h2>Înregistrare</h2>
-
-    <?php if ($error): ?>
-        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
-    <?php endif; ?>
-
-    <form method="POST">
-        <label>Utilizator:</label>
-        <input type="text" name="username" required>
-        <label>Parolă:</label>
-        <input type="password" name="password" required>
-        <button type="submit">Înregistrează-te</button>
-    </form>
-
-    <p>Ai deja cont? <a href="login.php">Autentifică-te</a></p>
-</body>
-</html>

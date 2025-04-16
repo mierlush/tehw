@@ -28,7 +28,7 @@ session_start();
             <?php if (isset($_SESSION['username'])): ?>
                 <li class="login-button"><a href="logout.php">Iesire</a></li>
             <?php else: ?>
-                <li class="login-button"><a href="login.php">Login</a></li>
+                <li class="login-button"><a href="login_page.php">Login</a></li>
             <?php endif; ?>
         </ul>
     </nav>
